@@ -115,9 +115,6 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 // 블끼야ㅑ
-<<<<<<< HEAD
 
 //kjdjhfewiohfuiweiuf
-=======
 // nfewiohfeowui
->>>>>>> 28b628224c08c6d4d943b952679d383dc930bef7
