@@ -1,3 +1,4 @@
+import 'package:classproject/main_id.dart';
 import 'package:flutter/material.dart';
 import 'school_id.dart';
 import 'etc.dart';
@@ -10,7 +11,7 @@ class Mainhome extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("메인화면작"),
+          title: Text("메인화면"),
         ),
         body: Center(
           child: Column(
@@ -28,7 +29,7 @@ class Mainhome extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => school_id()), // 학생증으로 이동해 주라고 요청하는 코즈
                     );
                   },
-                  child: Text('학생증'),
+                  child: Text('바코드 생성기'),
                 ), //버튼
               ),
               Container(
@@ -41,7 +42,18 @@ class Mainhome extends StatelessWidget {
                   },
                   child: Text('부가 기능'),
                 ), //버튼
-              )
+              ),
+              Container(
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push( // Navigator.push로 다른 화면으로 전환해야 함
+                      context,
+                      MaterialPageRoute(builder: (context) => Main_id()), // 학생증으로 이동해 주라고 요청하는 코즈
+                    );
+                  },
+                  child: Text('학생증'),
+                ), //버튼
+              ),
             ],
           ),
         ),

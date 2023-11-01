@@ -1,5 +1,6 @@
 name: classproject
 description: A new Flutter project.
+
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -16,10 +17,10 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
-version: 1.0.0+1
+version: 1.0.0+2
 
 environment:
-  sdk: '>=2.19.6 <3.2.0'
+  sdk: '>=2.19.6 <=3.14.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -31,6 +32,12 @@ dependencies:
   flutter:
     sdk: flutter
   mongo_dart: ^0.9.3
+  image_picker: ^1.0.4      # image_picker 패키지 버전
+  syncfusion_flutter_barcodes: ^23.1.42
+
+
+
+
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -40,6 +47,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -60,6 +68,7 @@ flutter:
   uses-material-design: true
   assets:
     - images/dshs.jpep.webp
+
 
   # To add assets to your application, add an assets section, like this:
   # assets:
