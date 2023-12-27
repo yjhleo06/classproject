@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'student/st20416.dart';
+import 'student/st20401.dart';
+
 
 class Main_id extends StatelessWidget {
-  const Main_id ({super.key});
+  const Main_id ({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
+    final TextEditingController controller = TextEditingController();
+
     return Scaffold(
       appBar: AppBar(
         title: Text('학생증'),
@@ -13,68 +19,38 @@ class Main_id extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.all(16.0),
-              decoration: BoxDecoration(
-                color: Colors.blue,
-                borderRadius: BorderRadius.circular(10.0),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  CircleAvatar(
-                    radius: 50.0,
-                    backgroundImage: AssetImage('assets/profile_picture.jpg'),
-                  ),
-                  SizedBox(height: 10.0),
-                  Text(
-                    '이름: 장재준',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  SizedBox(height: 5.0),
-                  Text(
-                    '학교: ABC 중학교',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16.0,
-                    ),
-                  ),
-                  SizedBox(height: 5.0),
-                  Text(
-                    '학번: 20230001',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16.0,
-                    ),
-                  ),
-                ],
+            TextField(
+              controller: controller,
+              decoration: InputDecoration(
+                labelText: '학생증 번호를 입력하세요',
               ),
             ),
-            SizedBox(height: 16.0),
-            Text(
-              '기타 정보',
-              style: TextStyle(
-                fontSize: 16.0,
-                fontWeight: FontWeight.bold,
-              ),
+            ElevatedButton(
+              onPressed: () {
+                switch (controller.text) {
+                  case '20416':
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => st20416()),
+                    );
+                    break;
+                  case '20401':
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => st20401()),
+                    );
+                    break;
+                  default:
+                    print('해당 학생증 번호의 화면이 존재하지 않습니다.');
+                    break;
+                }
+              },
+              child: Text('해당 학생증 화면으로 이동'),
             ),
-            SizedBox(height: 8.0),
-            Text('성별: 남성'),
-            Text('생년월일: 2005년 1월 1일'),
-            Text('전화번호: 010-1234-5678'),
-            // 추가적인 정보를 필요에 따라 나열할 수 있습니다.
           ],
         ),
       ),
     );
   }
 }
-
-
-
 
